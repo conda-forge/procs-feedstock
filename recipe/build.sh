@@ -2,6 +2,9 @@
 
 set -o xtrace -o nounset -o pipefail -o errexit
 
+export CARGO_PROFILE_RELEASE_STRIP=symbols
+export CARGO_PROFILE_RELEASE_LTO=fat
+
 # check licenses
 cargo-bundle-licenses \
     --format yaml \
@@ -21,6 +24,3 @@ if [[ ${build_platform} == ${target_platform} ]]; then
     install -m 644 procs.fish ${PREFIX}/share/fish/vendor_completions.d/procs.fish
     install -m 644 _procs ${PREFIX}/share/zsh/site-functions/_procs
 fi
-
-# strip debug symbols
-"$STRIP" "$PREFIX/bin/${PKG_NAME}"
