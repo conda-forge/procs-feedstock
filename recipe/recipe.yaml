@@ -1,5 +1,5 @@
 context:
-  version: 0.14.8
+  version: "0.14.9"
 
 package:
   name: procs
@@ -7,7 +7,7 @@ package:
 
 source:
   url: https://github.com/dalance/procs/archive/v${{ version }}.tar.gz
-  sha256: b9cf37275bdf1c03786a035c1cd495a93cbf94406eb8c261825d1fd59dcfd61d
+  sha256: 361982bd88bc84c184433309664598fdfdf5f603331cb21ba1108be40357608c
 
 build:
   number: 0
